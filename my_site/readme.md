@@ -1,48 +1,45 @@
-# Django Blog Project 
+# Django Blog Project 🚀
 
-## 1. Introducció
-Aquest projecte consisteix en el desenvolupament d'una aplicació web de Blog utilitzant el framework **Django**. L'objectiu principal és posar en pràctica els coneixements de programació web, disseny de bases de dades relacionals i arquitectura MVT (Model-Vista-Plantilla).
+## Introducció
+Este proyecto consiste en el desarrollo de una aplicación web de Blog utilizando el framework **Django**. El objetivo principal es poner en práctica los conocimientos de programación web, diseño de bases de datos relacionales y la arquitectura MVT (Modelo-Vista-Plantilla).
 
-### Objectius principals:
-* Gestionar un sistema dinàmic de publicacions (Posts) associats a Autors i Etiquetes (Tags).
-* Implementar un sistema de rutes netes i amigables (URLs dinàmiques i Slugs).
-* Modularitzar les vistes per oferir llistats i detalls específics de cada entitat.
-* Poblar la base de dades de forma eficient mitjançant l'ús de *Fixtures*.
+### Objetivos principales:
+* Gestionar un sistema dinámico de publicaciones (Posts) asociados a Autores y Etiquetas (Tags).
+* Implementar un sistema de rutas limpias y amigables (URLs dinámicas y Slugs).
+* Modularizar las vistas para ofrecer listados y detalles específicos de cada entidad.
+* Poblar la base de datos de forma eficiente mediante el uso de *Fixtures*.
 
 ---
 
-## 2. Instal·lació ràpida
+## Instal·lació ràpida
 
-Segueix aquests passos per configurar el projecte en el teu entorn local.
+Sigue esta secuencia única de comandos en tu terminal para clonar el proyecto, instalar las dependencias necesarias, configurar la base de datos y cargar los datos de prueba de golpe:
 
-### Pas 1: Clonar el repositori
-Clona el projecte des de GitHub a la teva màquina local:
 ```bash
-git clone <URL_DE_TEU_REPOSITORI_AQUÍ>
-cd my_site```
+# Pas 1: Clonar el repositori y entrar a la carpeta del proyecto
+git clone https://github.com/edsonPC20/DJANGO.git
+cd my_site
 
-### Pas 2: Instal·lar dependències
-Assegura't de tenir Python instal·lat. Després, instal·la Django i les dependències del projecte:
+# Pas 2: Instal·lar la dependencia de Django
 pip install django
 
-### Pas 3: Executar migracions
-Crea i aplica l'estructura de la base de dades local (db.sqlite3):
+# Pas 3: Executar les migracions per crear la base de datos local (db.sqlite3)
 python manage.py makemigrations
 python manage.py migrate
 
-### Pas 4: Poblar la Base de Dades (Opcional - Fixtures)
-Per carregar les dades de mostra del Blog (autors, posts i etiquetes inicials), executa:
-python manage.py loaddata initial_data.json
+# Pas 4: Poblar la Base de Dades carregant el fitxer JSON de les Fixtures
+python manage.py loaddata blog/fixtures/initial_data.json
 
-## 3. Execució del projecte
-Per arrancar el servidor de desenvolupament local de Django, executa el següent comando a la terminal:
+# Execució del projecte: Para arrancar el servidor de desarrollo local de Django, ejecuta el siguiente comando en tu terminal
 python manage.py runserver
 
-URL per accedir-hi
-Un cop el servidor estigui en marxa, pots accedir a l'aplicació mitjançant les següents adreces al teu navegador:
+# Rutas disponibles en el Blog:
+Página de Inicio: http://127.0.0.1:8000/ — "Muestra los 3 últimos posts publicados."
 
-Pàgina d'Inici (Home): http://127.0.0.1:8000/ — Mostra els últims posts.
+Todos los Posts: http://127.0.0.1:8000/posts — "Listado completo de todas las publicaciones."
 
-Llistat d'Autors: http://127.0.0.1:8000/authors — Taula amb els autors del blog.
+Listado de Autores: http://127.0.0.1:8000/authors — "Tabla estilizada con los autores registrados."
 
-Llistat d'Etiquetes (Tags): http://127.0.0.1:8000/tags — Filtre de posts per temàtica.
+Listado de Etiquetas: http://127.0.0.1:8000/tags — "Sección con filtros dinámicos para ver posts según su etiqueta."
+
+Panel de Administración: http://127.0.0.1:8000/admin — "Gestión interna de los modelos de datos de Django."
