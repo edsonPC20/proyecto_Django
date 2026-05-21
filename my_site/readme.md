@@ -43,3 +43,11 @@ Listado de Autores: http://127.0.0.1:8000/authors — "Tabla estilizada con los 
 Listado de Etiquetas: http://127.0.0.1:8000/tags — "Sección con filtros dinámicos para ver posts según su etiqueta."
 
 Panel de Administración: http://127.0.0.1:8000/admin — "Gestión interna de los modelos de datos de Django."
+
+## Documentació del projecte (Pydoc & GitHub Actions)
+
+La documentación técnica de los archivos de código fuente (`.py`) se genera automáticamente mediante **Pydoc** en cada subida de código, gracias a un flujo de trabajo automatizado configurado con **GitHub Actions**.
+
+Puedes visualizar de manera interactiva la documentación técnica del proyecto haciendo clic en el siguiente enlace:
+
+* **Enlace a la Documentación online:** [Visualizar Documentación en GitHub Pages](https://edsonpc20.github.io/django-blog-project/manage.html)

@@ -3,7 +3,7 @@ name: Generate Pydoc Documentation
 on:
   push:
     branches:
-      - main  
+      - main
 
 permissions:
   contents: write
@@ -25,11 +25,12 @@ jobs:
 
       - name: Generate Pydoc HTML
         env:
-          # Le decimos a Django dónde está la configuración de tu proyecto
-          DJANGO_SETTINGS_MODULE: my_site.settings
+          # Apunta a los settings dentro de tu estructura de doble carpeta
+          DJANGO_SETTINGS_MODULE: my_site.my_site.settings
         run: |
           mkdir docs
-          python -m pydoc -w manage blog/views blog/urls
+          # Rutas exactas corregidas para que encuentre views y urls sin perderse
+          python -m pydoc -w my_site/manage.py my_site/my_site/blog/views.py my_site/my_site/blog/urls.py
           mv *.html docs/
 
       - name: Deploy to GitHub Pages
