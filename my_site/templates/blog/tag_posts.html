@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Posts con la etiqueta #{{ tag.caption }}{% endblock %}
+
+{% block content %}
+<div style="margin: 40px auto; max-width: 900px;">
+    <a href="{% url 'tags-page' %}" style="color: #0d6efd; text-decoration: none; font-size: 16px; display: inline-block; margin-bottom: 20px;">
+        ← Tornar a totes les etiquetes
+    </a>
+
+    <h1 style="font-size: 36px; color: #212529; font-weight: 600; margin-bottom: 10px;">
+        Posts amb l'etiqueta <span style="color: #6c757d;">#{{ tag.caption }}</span>
+    </h1>
+    <p style="color: #6c757d; margin-bottom: 40px; font-size: 16px;">
+        S'han trobat {{ posts.count }} posts relacionats.
+    </p>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start;">
+        {% for post in posts %}
+            {% include "blog/includes/post_card.html" %}
+        {% empty %}
+            <p style="color: #6c757d; font-size: 16px;">No hi ha cap post que utilitzi aquesta etiqueta encara.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

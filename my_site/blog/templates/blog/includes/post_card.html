@@ -1,0 +1,19 @@
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        {% if post.image_name %}
+            <img src="/media/{{ post.image_name }}" alt="{{ post.title }}" style="width: 100%; height: 180px; object-fit: cover;">
+        {% else %}
+            <div style="width: 100%; height: 180px; background: #eee; display: flex; align-items: center; justify-content: center; color: #aaa;">Sense imatge</div>
+        {% endif %}
+
+        <div style="padding: 15px;">
+            <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #212529;">{{ post.title }}</h3>
+            <p style="margin: 0; font-size: 14px; color: #666; line-height: 1.4;">{{ post.excerpt }}</p>
+        </div>
+    </div>
+    
+    <div style="padding: 0 15px 15px 15px;">
+        <p style="margin: 0 0 10px 0; font-size: 12px; color: #999;">Data: {{ post.date|date:"M d, Y" }}</p>
+        <a href="{% url 'post-detail-page' post.slug %}" style="color: #007bff; text-decoration: none; font-size: 14px; font-weight: bold;">Llegeix més</a>
+    </div>
+</div>

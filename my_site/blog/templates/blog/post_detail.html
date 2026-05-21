@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+    
+    {% if post.image_name %}
+        <img src="/media/{{ post.image_name }}" alt="{{ post.title }}" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 4px; margin-bottom: 20px;">
+    {% endif %}
+
+    <h1 style="font-size: 32px; color: #212529; margin-bottom: 5px; font-weight: 600;">{{ post.title }}</h1>
+    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
+        <em>Publicat el {{ post.date|date:"M d, Y" }} per {{ post.author }}</em>
+    </p>
+    
+    <div style="font-size: 16px; color: #333; line-height: 1.6; text-align: justify;">
+        {{ post.content|linebreaks }}
+    </div>
+
+    {% if post_tags %}
+        <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+            {% for tag in post_tags %}
+                <span style="background: #e9ecef; color: #495057; padding: 5px 12px; margin-right: 8px; border-radius: 20px; font-size: 13px; font-weight: 500;">
+                    #{{ tag.caption }}
+                </span>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</article>
+{% endblock %}

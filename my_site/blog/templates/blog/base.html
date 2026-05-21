@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Blog M3-UF6-DJANGO{% endblock %}</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        /* Menú superior oscuro */
+        nav {
+            background-color: #212529;
+            padding: 15px 30px;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        /* Contenedor del contenido principal */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Pie de página gris oscuro */
+        footer {
+            background-color: #6c757d;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'starting-page' %}">INICI</a>
+        <a href="{% url 'posts-page' %}">POSTS</a>
+        <a href="{% url 'authors-page' %}">AUTORS</a>
+        <a href="{% url 'tags-page' %}">TAGS</a>
+    </nav>
+
+    {% block banner %}{% endblock %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        © 2026 Copyright: Blog de Django-M3-UF6
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Etiquetes{% endblock %}
+
+{% block content %}
+<div style="margin: 40px auto; max-width: 900px;">
+    <h1 style="font-size: 36px; color: #212529; font-weight: 600; margin-bottom: 30px;">Etiquetes</h1>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+        {% for tag in all_tags %}
+            <a href="{% url 'tag-posts-page' tag.caption %}" style="text-decoration: none;">
+                <span style="background-color: #6c757d; color: white; padding: 10px 20px; border-radius: 6px; font-size: 16px; font-family: sans-serif; font-weight: 500; display: inline-block; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#495057'" onmouseout="this.style.backgroundColor='#6c757d'">
+                    #{{ tag.caption }}
+                </span>
+            </a>
+        {% empty %}
+            <p style="color: #6c757d;">No hi ha etiquetes disponibles.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

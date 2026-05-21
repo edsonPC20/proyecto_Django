@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Benvingut al Blog M3 - UF6{% endblock %}
+
+{% block banner %}
+<div style="width: 100%; height: 250px; background-image: url('https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=1200'); background-size: cover; background-position: center;"></div>
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin: 40px 0;">
+    <h1 style="font-size: 42px; margin-bottom: 10px; font-weight: 400; color: #212529;">Benvingut al Blog M3 - UF6</h1>
+    <p style="font-size: 18px; color: #666; margin: 0;">Aquest és el projecte d'aprenentatge M3-UF6 basat en Django</p>
+</div>
+
+<section style="margin-top: 40px;">
+    <h2 style="font-size: 28px; margin-bottom: 20px; color: #212529; font-weight: 600;">Darrers Posts</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
+        {% for post in posts %}
+            {% include "blog/includes/post_card.html" %}
+        {% empty %}
+            <p>No hi ha posts disponibles encara.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<div style="margin-top: 40px; color: #666; font-size: 14px; line-height: 1.6; border-top: 1px solid #eee; padding-top: 20px;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere iusto minus quas corporis explicabo laborum? Pariatur labore quidem cum id alias aut, earum ad, quos quae sunt est quas.
+</div>
+{% endblock %}

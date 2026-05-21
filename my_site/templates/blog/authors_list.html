@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Llista d'Autors{% endblock %}
+
+{% block content %}
+<style>
+    .tabla-autores tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+    .tabla-autores tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+</style>
+
+<div style="margin: 40px auto; max-width: 900px;">
+    <h1 style="font-size: 32px; color: #212529; font-weight: 600; margin-bottom: 30px;">Llista d'Autors</h1>
+    
+    <table class="tabla-autores" style="width: 100%; border-collapse: collapse; margin-top: 20px; font-family: sans-serif;">
+        <thead>
+            <tr style="border-bottom: 2px solid #212529; text-align: left;">
+                <th style="padding: 12px; font-size: 16px; color: #212529;">Nom</th>
+                <th style="padding: 12px; font-size: 16px; color: #212529;">Cognom</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+            <tr style="border-bottom: 1px solid #dee2e6;">
+                <td style="padding: 15px 12px; color: #495057;">{{ author.first_name }}</td>
+                <td style="padding: 15px 12px; color: #495057;">{{ author.last_name }}</td>
+                <td style="padding: 15px 12px; text-align: right;">
+                    <a href="{% url 'author-detail-page' author.id %}" style="display: inline-block; background-color: #0d6efd; color: white; padding: 6px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">
+                        saber-ne +
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" style="padding: 20px; text-align: center; color: #6c757d;">No hi ha autors registrats.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

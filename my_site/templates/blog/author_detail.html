@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Detalls de l'Autor{% endblock %}
+
+{% block content %}
+<div style="margin: 40px auto; max-width: 900px;">
+    <h1 style="font-size: 36px; color: #212529; font-weight: 600; margin-bottom: 25px;">Detalls de l'Autor</h1>
+    
+    <div style="margin-bottom: 40px; font-size: 16px; line-height: 1.8; color: #212529;">
+        <p><strong>Nom:</strong> {{ author.first_name }}</p>
+        <p><strong>Cognom:</strong> {{ author.last_name }}</p>
+        <p><strong>Adreça:</strong> <a href="mailto:{{ author.email_address }}" style="color: #0d6efd;">{{ author.email_address }}</a></p>
+    </div>
+
+    <h2 style="font-size: 26px; color: #212529; font-weight: 600; margin-bottom: 20px;">Posts publicats per {{ author.first_name }} {{ author.last_name }}</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start;">
+        {% for post in author.posts.all %}
+            {% include "blog/includes/post_card.html" %}
+        {% empty %}
+            <p style="color: #6c757d;">Aquest autor encara no ha publicat cap post.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

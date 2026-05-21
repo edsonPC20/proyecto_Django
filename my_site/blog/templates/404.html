@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Pàgina no trobada - Error 404{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin: 80px auto; max-width: 600px;">
+    <h1 style="font-size: 72px; color: #dc3545; margin-bottom: 10px; font-weight: bold;">404</h1>
+    <h2 style="font-size: 28px; color: #212529; margin-bottom: 20px;">Ho sentim, pàgina no trobada</h2>
+    <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 30px;">
+        El recurs que estàs buscant no existeix o ha estat mogut a una altra adreça. Revisa que la URL estigui ben escrita.
+    </p>
+    <a href="{% url 'starting-page' %}" style="display: inline-block; background-color: #212529; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: 500;">
+        Tornar a l'Inici
+    </a>
+</div>
+{% endblock %}

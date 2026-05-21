@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Tots els Posts{% endblock %}
+
+{% block content %}
+<div style="margin: 40px 0;">
+    <h1 style="font-size: 36px; color: #212529; font-weight: 600; margin-bottom: 30px;">Llistat de tots els posts</h1>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start;">
+        {% for post in all_posts %}
+            {% include "blog/includes/post_card.html" %}
+        {% empty %}
+            <p>No hi ha posts disponibles encara.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
