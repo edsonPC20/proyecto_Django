@@ -25,14 +25,22 @@ jobs:
 
       - name: Generate Pydoc HTML
         env:
-          # Indicamos a Django dónde encontrar los settings reales en tu estructura
+          # Apunta a la configuración real respetando la doble carpeta
           DJANGO_SETTINGS_MODULE: my_site.settings
-          PYTHONPATH: ${{ github.workspace }}/my_site
         run: |
           mkdir docs
-          # Comando corregido con el formato exacto que pide Pydoc
-          python -m pydoc -w manage my_site/blog/views.py my_site/blog/urls.py
-          mv *.html docs/
+          
+          # 1. Entramos a la carpeta contenedora real de tu proyecto
+          cd my_site
+          
+          # 2. Añadimos esta ruta al sistema para que Django no se pierda
+          export PYTHONPATH=$PWD
+          
+          # 3. Ejecutamos Pydoc apuntando exactamente a tus archivos internos
+          python -m pydoc -w manage blog/views.py blog/urls.py
+          
+          # 4. Movemos los archivos generados a la carpeta externa docs
+          mv *.html ../docs/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
