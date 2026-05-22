@@ -28,7 +28,7 @@ jobs:
           DJANGO_SETTINGS_MODULE: my_site.my_site.settings
         run: |
           mkdir docs
-          python -m pydoc -w my_site/my_site/manage.py my_site/my_site/blog/views.py my_site/my_site/blog/urls.py
+          python -m pydoc -w my_site/manage.py my_site/my_site/blog/views.py my_site/my_site/blog/urls.py
           mv *.html docs/
 
       - name: Deploy to GitHub Pages
