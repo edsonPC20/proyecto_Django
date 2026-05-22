@@ -17,7 +17,7 @@ Sigue esta secuencia única de comandos en tu terminal para clonar el proyecto, 
 
 ```bash
 # Pas 1: Clonar el repositori y entrar a la carpeta del proyecto
-git clone https://github.com/edsonPC20/django-blog-project.git
+git clone https://github.com/edsonPC20/proyecto_Django.git
 cd my_site
 
 # Pas 2: Instal·lar la dependencia de Django
