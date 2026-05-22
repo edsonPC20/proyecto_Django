@@ -50,4 +50,8 @@ La documentación técnica de los archivos de código fuente (`.py`) se genera a
 
 Puedes visualizar de manera interactiva la documentación técnica del proyecto haciendo clic en el siguiente enlace:
 
-* **Enlace a la Documentación online:** [Visualizar Documentación en GitHub Pages](https://edsonpc20.github.io/django-blog-project/manage.html)
+📄 Rutas: https://edsonpc20.github.io/proyecto_Django/blog.urls.html
+
+📄 Vistas: https://edsonpc20.github.io/proyecto_Django/blog.views.html
+
+📄 Administrador: https://edsonpc20.github.io/proyecto_Django/manage.html
