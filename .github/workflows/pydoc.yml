@@ -25,21 +25,21 @@ jobs:
 
       - name: Generate Pydoc HTML
         env:
-          # Apunta a la configuración real respetando la doble carpeta
+          # Le decimos a Django exactamente dónde está su archivo de configuración
           DJANGO_SETTINGS_MODULE: my_site.settings
         run: |
           mkdir docs
           
-          # 1. Entramos a la carpeta contenedora real de tu proyecto
+          # 1. Nos metemos en la carpeta contenedora donde está tu proyecto
           cd my_site
           
-          # 2. Añadimos esta ruta al sistema para que Django no se pierda
+          # 2. Obligamos a Python a reconocer la carpeta actual para que no se líe
           export PYTHONPATH=$PWD
           
-          # 3. Ejecutamos Pydoc apuntando exactamente a tus archivos internos
-          python -m pydoc -w manage blog/views.py blog/urls.py
+          # 3. Ejecutamos Pydoc usando rutas absolutas del sistema para tus archivos reales
+          python -m pydoc -w manage ./blog/views.py ./blog/urls.py
           
-          # 4. Movemos los archivos generados a la carpeta externa docs
+          # 4. Sacamos los archivos HTML generados hacia la carpeta docs externa
           mv *.html ../docs/
 
       - name: Deploy to GitHub Pages
