@@ -25,12 +25,13 @@ jobs:
 
       - name: Generate Pydoc HTML
         env:
-          # Apunta a los settings que están en la raíz del repositorio de GitHub
+          # Indicamos a Django dónde encontrar los settings reales en tu estructura
           DJANGO_SETTINGS_MODULE: my_site.settings
+          PYTHONPATH: ${{ github.workspace }}/my_site
         run: |
           mkdir docs
-          # Rutas corregidas basándonos en cómo están los archivos en tu GitHub
-          python -m pydoc -w manage.py blog/views.py blog/urls.py
+          # Comando corregido con el formato exacto que pide Pydoc
+          python -m pydoc -w manage my_site/blog/views.py my_site/blog/urls.py
           mv *.html docs/
 
       - name: Deploy to GitHub Pages
