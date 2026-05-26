@@ -8,5 +8,5 @@ urlpatterns = [
     path("authors", views.authors, name="authors-page"),
     path("authors/<int:id>", views.author_detail, name="author-detail-page"),
     path("tags", views.tags, name="tags-page"),
-    path("tags/<str:tag_caption>", views.tag_posts, name="tag-posts-page"), # <-- ¡AÑADE ESTA LÍNEA!
+    path("tags/<str:tag_caption>", views.tag_posts, name="tag-posts-page"), 
 ]

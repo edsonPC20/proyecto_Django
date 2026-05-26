@@ -27,9 +27,6 @@ pip install django
 python manage.py makemigrations
 python manage.py migrate
 
-# Pas 4: Poblar la Base de Dades carregant el fitxer JSON de les Fixtures
-python manage.py loaddata blog/fixtures/initial_data.json
-
 # Execució del projecte: Para arrancar el servidor de desarrollo local de Django, ejecuta el siguiente comando en tu terminal
 python manage.py runserver
 

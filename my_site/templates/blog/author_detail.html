@@ -10,6 +10,7 @@
         <p><strong>Nom:</strong> {{ author.first_name }}</p>
         <p><strong>Cognom:</strong> {{ author.last_name }}</p>
         <p><strong>Adreça:</strong> <a href="mailto:{{ author.email_address }}" style="color: #0d6efd;">{{ author.email_address }}</a></p>
+        <p>Total de posts publicados : {{ author.total_posts }}</p>
     </div>
 
     <h2 style="font-size: 26px; color: #212529; font-weight: 600; margin-bottom: 20px;">Posts publicats per {{ author.first_name }} {{ author.last_name }}</h2>
